@@ -9,64 +9,52 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 
+# Define the function
 def f(x):
     return x**3 - 4*x - 9
 
-a = 2
-b = 3
-tol = 1e-4
+a, b = 2, 3
+tol = 0.0001
 max_iter = 50
 
-# Check sign change
+# Check whether a root exists
 if f(a) * f(b) >= 0:
     print("Bisection method cannot be applied")
 else:
-    # Minimum number of iterations
-    n = math.ceil(math.log2((b - a) / tol))
-    print("Minimum number of iterations =", n)
+    print("Minimum iterations =", math.ceil(math.log2((b-a)/tol)))
 
-    iterations = []
-    roots = []
+    iterations, roots = [], []
 
-    print("\nIt\t a\t\t b\t\t c\t\t f(c)")
+    print("\nIter\t a\t\t b\t\t c\t\t f(c)")
 
-    for i in range(1, max_iter + 1):
-        c = (a + b) / 2
-
-        iterations.append(i)
-        roots.append(c)
+    for i in range(1, max_iter+1):
+        c = (a+b)/2
+        iterations.append(i) 
+        roots.append(c)# we add the values into array because it helps us to plot the graph
 
         print(f"{i}\t{a:.6f}\t{b:.6f}\t{c:.6f}\t{f(c):.6f}")
 
-        if abs(f(c)) < tol or (b - a) / 2 < tol:
+        # Stop when tolerance is reached
+        if abs(f(c)) < tol or (b-a)/2 < tol:
             break
 
-        if f(a) * f(c) < 0:
+        # Update the interval
+        if f(a)*f(c) < 0:
             b = c
         else:
             a = c
 
     print("\nApproximate root =", c)
-    print("Number of iterations =", i)
+    print("Iterations used =", i)
 
-    # Plot the function
-    x = np.linspace(1, 4, 400)
-    y = f(x)
+    # Graph of the function
+x = np.linspace(1, 4, 100)
+plt.plot(x, f(x))
+plt.plot(c, f(c), 'ro')# ro means red dot near c,f(c)
+plt.grid()
+plt.show()
 
-    plt.plot(x, y, label="f(x) = x^3 - 4x - 9")
-    plt.axhline(0, color="black")
-    plt.scatter(c, f(c), label="Approximate root")
-    plt.xlabel("x")
-    plt.ylabel("f(x)")
-    plt.title("Bisection Method")
-    plt.legend()
-    plt.grid()
-    plt.show()
-
-    # Plot convergence
-    plt.plot(iterations, roots, marker="o")
-    plt.xlabel("Iteration number")
-    plt.ylabel("Midpoint c")
-    plt.title("Convergence of Bisection Method")
-    plt.grid()
-    plt.show()
+# Convergence graph
+plt.plot(iterations, roots, 'o-') #'o-' → draws circular markers connected by lines.
+plt.grid()
+plt.show()

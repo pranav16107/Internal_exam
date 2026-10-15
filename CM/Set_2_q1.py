@@ -1,35 +1,22 @@
 # Q1 (Short, Week 2). Write a Python program to solve the non-homogeneous system x + y 
-# + z = 6, 2x − y + z = 3, x + 2y − z = 2. Compare the rank of the coeAicient matrix with the 
-# rank of the augmented matrix, state the type of solution (unique, infinite or none) and 
+# + z = 6, 2x − y + z = 3, x + 2y − z = 2. Compare the rank of the coeAicient matrix with the rank of the augmented matrix, state the type of solution (unique, infinite or none) and 
 # print the solution.
 
-import numpy as np
+import sympy as sp
 
-A = np.array([[1, 1, 1],
-              [2, -1, 1],
-              [1, 2, -1]], dtype=float)
+A = sp.Matrix([[1, 1, 1], [2, -1, 1], [1, 2, -1]])
+B = sp.Matrix([6, 3, 2])
 
-B = np.array([6, 3, 2], dtype=float)
+r1 = A.rank()
+r2 = A.row_join(B).rank()
 
-# Calculate rank
-rank_A = np.linalg.matrix_rank(A)
-rank_AB = np.linalg.matrix_rank(np.column_stack((A, B)))
+print("Rank of A:", r1)
+print("Rank of augmented matrix:", r2)
 
-print("Rank of A:", rank_A)
-print("Rank of augmented matrix:", rank_AB)
-
-# Find the type of solution
-if rank_A != rank_AB:
+if r1 != r2:
     print("No solution")
-elif rank_A < A.shape[1]:
+elif r1 < 3:
     print("Infinite solutions")
 else:
     print("Unique solution")
-
-    # Solve
-    x = np.linalg.solve(A, B)
-
-    print("Solution:")
-    print(f"x = {x[0]:.2f}")
-    print(f"y = {x[1]:.2f}")
-    print(f"z = {x[2]:.2f}")
+    print("Solution:", A.inv() * B) #AX=B => X=A⁻¹*B

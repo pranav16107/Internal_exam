@@ -1,0 +1,17 @@
+# Q1 (Short, Week 3). Write a Python program that generates a random 3×3 integer matrix 
+# (entries from 1 to 9), computes its eigenvalues and eigenvectors, and verifies Av = λv for each eigenpair by printing the residual.
+
+
+import numpy as np
+
+A = np.random.randint(1, 10, (3, 3))
+values, vectors = np.linalg.eig(A)
+
+print("Matrix A:\n", A)
+print("\nEigenvalues:\n", values)
+
+for i in range(3):
+    v = vectors[:, i]
+    residual = A @ v - values[i] * v
+    print(f"\nEigenvector {i+1}:\n", v)
+    print("Residual:", residual)
