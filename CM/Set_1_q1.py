@@ -1,6 +1,5 @@
-# Q1 (Short, Week 1). Write a Python program to solve the homogeneous system AX = 0 for 
-# A = [[1, 2, 3], [2, 4, 6], [1, 1, 1]]. Print the rank of A, state whether the solution is trivial or non-trivial, and print a basis of the null space. 
-
+# Q1 (Short, Week 1). Write a Python program to solve the homogeneous system AX = 0 for A = [[1, 2, 3], [2, 4, 6], [1, 1, 1]]. Print the rank of A, state whether the solution is trivial or non-trivial, and print a basis of the null space. 
+# homogenous eq means AX=0; 
 import sympy as sp
 
 A = sp.Matrix([[1, 2, 3],

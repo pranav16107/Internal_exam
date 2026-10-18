@@ -1,5 +1,4 @@
-# Q1 (Short, Week 9). Write a Python program to perform the first four Gauss-Seidel 
-# iterations for the system 4x + y = 9, x + 3y = 7 starting from (0, 0). Print each iterate. 
+# Q1 (Short, Week 9). Write a Python program to perform the first four Gauss-Seidel iterations for the system 4x + y = 9, x + 3y = 7 starting from (0, 0). Print each iterate. 
 
 def seidel(x0, y0, max_iter):
     x, y = x0, y0
@@ -7,7 +6,7 @@ def seidel(x0, y0, max_iter):
     for i in range(max_iter):
         # Calculate new values using Gauss-Seidel method
         x_new = (9 - y) / 4
-        y_new = (7 - x_new) / 3
+        y_new = (7 - x_new) / 3 #in jacobi we use x instead of x_new in the equation
 
         print(
             f"Iteration {i+1}: "

@@ -5,10 +5,10 @@ def f(x):
     return x**2 - 2
 
 a, b = 1, 2
-tol = 1e-3
+tol = 0.001
 n = 0
 
-while b - a > tol:
+while (b - a > tol):
     c = (a + b) / 2
     n += 1
 

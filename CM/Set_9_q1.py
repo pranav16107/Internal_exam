@@ -1,5 +1,4 @@
-# Q1 (Short, Week 10). Write a Python program using SymPy to check whether (3x² + 4xy) 
-# dx + (2x² + 2y) dy = 0 is exact and, if so, print its general solution. 
+# Q1 (Short, Week 10). Write a Python program using SymPy to check whether (3x² + 4xy) dx + (2x² + 2y) dy = 0 is exact and, if so, print its general solution.
 
 import sympy as sp
 from sympy import symbols, diff, integrate, simplify
