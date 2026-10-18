@@ -1,6 +1,4 @@
-# Q1 (Short, Week 3). Write a Python program to obtain the symmetric matrix of the 
-# quadratic form Q = 2x² + 3y² + 4z² + 2xy − 4yz + 6xz. Print the matrix and verify that it is symmetric. 
-
+# Q1 (Short, Week 3). Write a Python program to obtain the symmetric matrix of the  quadratic form Q = 2x² + 3y² + 4z² + 2xy − 4yz + 6xz. Print the matrix and verify that it is symmetric. 
 import sympy as sp
 
 # Define the symmetric matrix

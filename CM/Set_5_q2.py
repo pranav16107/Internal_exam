@@ -1,11 +1,4 @@
-# Q2 (Long, Week 9). Write a Python program to solve the system 27x + 6y − z = 85, 6x + 
-# 15y + 2z = 72, x + y + 54z = 110 using the Gauss-Seidel method. The program must check 
-# diagonal dominance, start from (0, 0, 0), stop at tolerance 10⁻⁴ or after 100 iterations, 
-# and print the iteration table. Solve the same system with Jacobi's method and compare 
-# the number of iterations needed by the two methods. Plot the error against the iteration 
-# number for both methods on the same graph. 
-
-
+# Q2 (Long, Week 9). Write a Python program to solve the system 27x + 6y − z = 85, 6x + 15y + 2z = 72, x + y + 54z = 110 using the Gauss-Seidel method. The program must check diagonal dominance, start from (0, 0, 0), stop at tolerance 10⁻⁴ or after 100 iterations, and print the iteration table. Solve the same system with Jacobi's method and compare the number of iterations needed by the two methods. Plot the error against the iteration number for both methods on the same graph. 
 
 import numpy as np
 import matplotlib.pyplot as plt
