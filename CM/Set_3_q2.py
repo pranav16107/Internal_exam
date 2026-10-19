@@ -1,4 +1,4 @@
-# Q2 (Long, Week 10). Write a Python program using SymPy to solve first-order diAerential equations of the form M dx + N dy = 0. The program must test exactness by comparing ∂M/∂y and ∂N/∂x, and if the equation is not exact, find an integrating factor that depends on x alone or y alone. Solve (a) (2xy + 3) dx + (x² + 4y) dy = 0 and (b) (x² + y² + x) dx + xy dy = 0, print the general solution F(x, y) = C, and plot the solution curves for at least five values of C using a contour plot.
+# Q2 (Long, Week 10). Write a Python program using SymPy to solve first-order diAerential equations of the form M dx + N dy = 0. The program must test exactness by comparing ∂M/∂y and ∂N/∂x, and if the equation is not exact, find an integrating factor that depends on x alone or y alone. Solve (a) (2xy + 3) dx + (x² + 4y) dy = 0 and (b)(x²+y²+x)dx+xydy = 0, print the general solution F(x, y) = C, and plot the solution curves for at least five values of C using a contour plot.
 import sympy as s
 import numpy as np
 import matplotlib.pyplot as plt

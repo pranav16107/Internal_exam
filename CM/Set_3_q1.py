@@ -11,7 +11,7 @@ print("Matrix A:\n", A)
 print("\nEigenvalues:\n", values)
 
 for i in range(3):
-    v = vectors[:, i]
+    v = vectors[:, i] # ':'=>colon means selects all rows.
     residual = A @ v - values[i] * v
     print(f"\nEigenvector {i+1}:\n", v)
     print("Residual:", residual)

@@ -1,9 +1,4 @@
-# Q2 (Long, Week 8). Write a Python program to solve the system 10x + y + z = 12, 2x + 10y 
-# + z = 13, 2x + 2y + 10z = 14 using Jacobi's iteration method. The program must check 
-# diagonal dominance, start from the initial guess (0, 0, 0), stop when the maximum 
-# change in the variables is below 10⁻⁵ or after 100 iterations, and print a table of the 
-# iterates. Verify the result with numpy.linalg.solve. Plot each variable against the iteration number and plot the residual norm on a log scale. 
-
+# Q2 (Long, Week 8). Write a Python program to solve the system 10x + y + z = 12, 2x + 10y + z = 13, 2x + 2y + 10z = 14 using Jacobi's iteration method. The program must check diagonal dominance, start from the initial guess (0, 0, 0), stop when the maximum change in the variables is below 10⁻⁵ or after 100 iterations, and print a table of the iterates. Verify the result with numpy.linalg.solve. Plot each variable against the iteration number and plot the residual norm on a log scale.
 
 import numpy as np
 import matplotlib.pyplot as plt
