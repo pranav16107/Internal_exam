@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Shopping Cart</h1>
+
+<nav>
+    <button onclick="show('home')">Home</button>
+    <button onclick="show('login')">Login</button>
+    <button onclick="show('register')">Registration</button>
+</nav>
+
+<div id="home" class="page">
+    <h2>Products</h2>
+
+    <p>Product 1 - Rs. 100
+        <button onclick="add(100)">Add</button>
+    </p>
+
+    <p>Product 2 - Rs. 200
+        <button onclick="add(200)">Add</button>
+    </p>
+
+    <h2>Your Cart</h2>
+    <div id="cart">Cart is empty</div>
+    <h3 id="total">Total: Rs. 0</h3>
+
+    <button onclick="order()">Place Order</button>
+</div>
+
+<div id="login" class="page">
+    <h2>Login</h2>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button>Login</button>
+</div>
+
+<div id="register" class="page">
+    <h2>Registration</h2>
+    <input placeholder="Name">
+    <input placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button>Register</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

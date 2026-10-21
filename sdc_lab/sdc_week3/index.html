@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="container">
+
+    <h1 class="text-center bg-light p-3">Shopping Cart</h1>
+
+    <nav class="text-center p-2">
+        <button class="btn btn-secondary" onclick="show('home')">Home</button>
+        <button class="btn btn-secondary" onclick="show('login')">Login</button>
+        <button class="btn btn-secondary" onclick="show('register')">Registration</button>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page">
+        <h2>Products</h2>
+
+        <div class="row">
+            <div class="col-12 col-md-6 p-2">
+                Product 1 - Rs. 100
+                <button class="btn btn-secondary" onclick="add(100)">Add</button>
+            </div>
+
+            <div class="col-12 col-md-6 p-2">
+                Product 2 - Rs. 200
+                <button class="btn btn-secondary" onclick="add(200)">Add</button>
+            </div>
+        </div>
+
+        <h2>Your Cart</h2>
+        <div id="cart">Cart is empty</div>
+        <h4 id="total">Total: Rs. 0</h4>
+
+        <button class="btn btn-secondary" onclick="order()">Place Order</button>
+    </div>
+
+    <!-- Login Page -->
+    <div id="login" class="page">
+        <h2>Login</h2>
+
+        <form onsubmit="return validateLogin()">
+            <input id="username" class="form-control mb-2" placeholder="Username">
+
+            <input id="loginPassword" class="form-control mb-2"
+                   type="password" placeholder="Password">
+
+            <button class="btn btn-secondary">Login</button>
+        </form>
+    </div>
+
+    <!-- Registration Page -->
+    <div id="register" class="page">
+        <h2>Registration</h2>
+
+        <form onsubmit="return validateRegister()">
+            <input id="name" class="form-control mb-2" placeholder="Name">
+
+            <input id="email" class="form-control mb-2" type="email" placeholder="Email">
+
+            <input id="password" class="form-control mb-2"
+                   type="password" placeholder="Password">
+
+            <input id="confirmPassword" class="form-control mb-2"
+                   type="password" placeholder="Confirm Password">
+
+            <button class="btn btn-secondary">Register</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
